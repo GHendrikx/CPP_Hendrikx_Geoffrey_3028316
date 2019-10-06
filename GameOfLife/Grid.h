@@ -1,5 +1,6 @@
 #pragma once
 #include "Cell.h"
+#include "RuleSet.h";
 
 #define VERTICAL_SIZE 25
 #define HORIZONTAL_SIZE 25
@@ -12,9 +13,10 @@ class Grid
 		void firstGeneration();
 		void printGrid();
 		void calculateNeighbors();
-		Grid();
+		Grid(RuleSet ruleSet);
 		~Grid();
 		Cell_Status status;
 		void checkNeighbors(int x, int y);
+		RuleSet ruleSet;
 };
 
