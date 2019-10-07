@@ -106,7 +106,7 @@ int main()
 	system("cls");
 //part 4
 	modulesIterator = modules->begin();
-	modulesIterator->RemoveStudent();
+	modulesIterator->removeStudent();
 
 	while (modulesIterator != modules->end())
 	{

@@ -8,10 +8,10 @@ class Module
 {
 public:
 	Module(std::string moduleName,Docent docent, int ECS);
-	void ChangeECS();
+	void changeECS();
 	void joinModule(Student student);
 	void printModuleInfo();
-	void RemoveStudent();
+	void removeStudent();
 	int ECS;
 
 private:

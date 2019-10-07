@@ -12,12 +12,12 @@ void Module::joinModule(Student student)
 	students.push_back(student);
 }
 
-void Module::ChangeECS() 
+void Module::changeECS() 
 {
 	this->ECS += 1;
 }
 
-void Module::RemoveStudent()
+void Module::removeStudent()
 {
 	auto iterator = students.begin();
 
