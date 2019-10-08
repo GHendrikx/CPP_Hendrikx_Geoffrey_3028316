@@ -1,35 +1,43 @@
 #include <queue>
 #include <thread>
-#include <mutex>
 #include <iostream>
-#include <conio.h>
+#include <mutex>
+#include <condition_variable>
+#include <chrono>
 
 int counter = 0;
 bool done = false;
 std::queue<int> goods;
-std::mutex mutex;
+std::mutex mutexLock;
+std::condition_variable cond;
+std::unique_lock<std::mutex> locker(mutexLock);
 
 void producer() {
-	mutex.lock();
+	mutexLock.lock();
 	for (int i = 0; i < 500; ++i) {
 		goods.push(i);
 		counter++;
 	}
+	cond.notify_one(); // wake up 1 sleeping thread
+	mutexLock.unlock();
+	std::this_thread::sleep_for(std::chrono::seconds(1));
 	done = true;
-	mutex.unlock();
 }
 
 void consumer() {
+	std::cout << "Wait Edwin" << std::endl;
+	cond.wait(locker);
+	std::cout << "Wait!!!! Edwin Wait!!!!!" << std::endl;
 	while (!done) {
 		while (!goods.empty()) {
 			goods.pop();
 			counter--;
 		}
 	}
+	locker.unlock();
 }
 
 int main() {
-	system("cls");
 	std::thread producerThread(producer);
 	std::thread consumerThread(consumer);
 
@@ -37,6 +45,4 @@ int main() {
 	consumerThread.join();
 
 	std::cout << "Net: " << counter << " " << goods.size() << " " << std::endl;
-	
-	return 0;
 }
