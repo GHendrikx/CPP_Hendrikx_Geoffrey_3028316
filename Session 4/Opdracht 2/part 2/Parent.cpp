@@ -35,10 +35,10 @@ Parent& Parent::operator=(Parent&& other) noexcept
 	if (&other == this)
 		return *this;
 
+	//Transfer values
 	name = nullptr;
-	// Transfer ownership of a.m_ptr to m_ptr
 	name = other.name;
-	other.name = nullptr; // we'll talk more about this line below
+	other.name = nullptr;
 
 	return *this;
 }
