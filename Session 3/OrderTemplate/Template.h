@@ -21,8 +21,9 @@ inline Template<T>::~Template()
 {
 }
 
+//sorting T
 template<typename T>
-inline void Template<T>::sortingTArray(T objArray[], int n)
+inline void Template<T>::sortingT(T objArray[], int n)
 {	
 	//Get the array size
 	std::sort(objArray, objArray+n); //Use the start and end like this
@@ -33,6 +34,7 @@ inline void Template<T>::sortingTArray(T objArray[], int n)
 	std::cout << std::endl;
 }
 
+//printing it
 template<typename T>
 inline void Template<T>::printArray(T objArray[], int n)
 {

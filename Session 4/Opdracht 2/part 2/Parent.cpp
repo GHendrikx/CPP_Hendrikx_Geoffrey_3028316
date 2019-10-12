@@ -23,7 +23,7 @@ Parent& Parent::operator=(const Parent& other) {
 
 	if (this == &other) return *this;
 
-	this->name = other.name;
+	this->name = std::move(other.name);
 	this->child.reset(new Child(*other.child));
 	return *this;
 }

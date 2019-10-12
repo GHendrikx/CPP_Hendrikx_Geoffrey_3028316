@@ -12,11 +12,11 @@ int main()
 	//setting size
 	int size = std::size(floatArray);
 	//sort
-	floatTemplate.sortingTArray(floatArray, size);
+	floatTemplate.sortingT(floatArray, size);
 
 	Template<std::string> stringTemplate;
 	std::string stringArray[] = {"B","A","A","C"};
 	size = std::size(stringArray);
-	stringTemplate.sortingTArray(stringArray, size);
+	stringTemplate.sortingT(stringArray, size);
 	
 }

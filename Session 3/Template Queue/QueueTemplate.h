@@ -17,6 +17,7 @@ private:
 	int sizeOfCollection;
 };
 
+//Pushing the array in a queue
 template<typename T>
 inline QueueTemplate<T>::QueueTemplate(T arrayOfTypes[],int size)
 {
@@ -31,7 +32,7 @@ inline QueueTemplate<T>::~QueueTemplate()
 	
 }
 
-
+//put the object in the queue
 template<typename T>
 inline void QueueTemplate<T>::put(T obj)
 {
@@ -39,7 +40,7 @@ inline void QueueTemplate<T>::put(T obj)
 }
 
 template<typename T>
-inline void QueueTemplate<T>::printVector()
+inline void QueueTemplate<T>::printQueue()
 {
 	auto iterator = QueueTemplate::vectorQueue.begin();
 	while (iterator != QueueTemplate::vectorQueue.end())
@@ -48,7 +49,7 @@ inline void QueueTemplate<T>::printVector()
 		iterator++;
 	}
 }
-
+//getting first element from the queue
 template<typename T>
 inline T QueueTemplate<T>::get()
 {

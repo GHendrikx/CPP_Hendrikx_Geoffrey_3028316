@@ -2,6 +2,7 @@
 #include "Cell.h"
 #include "Grid.h"
 
+//Checking neighbors in the raster
 void checkNeighbors(int x, int y,int raster[VERTICAL_SIZE][HORIZONTAL_SIZE])
 {
 	int neighbors = 0;

@@ -116,7 +116,7 @@ int main()
 	}
 
 #pragma region cleaning up in the garbage collection
-
+	//deleting the trash to the garbage collector.
 	delete modules;
 	delete students;
 	delete teachers;

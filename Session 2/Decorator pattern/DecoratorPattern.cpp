@@ -12,7 +12,8 @@ int main()
 {
 	//Create the decorator class then rendering the object.
 	srand(time(NULL));
-	NPCDecorator* decorator = new NPCDecorator(new Elve());
+	//making a new decorator
+	NPCDecorator* decorator = new NPCDecorator(new Elve()); //ps: i know i spelled elf wrong if you were curious :p
 	decorator->render();
 
 	decorator = new NPCDecorator(new Orc());

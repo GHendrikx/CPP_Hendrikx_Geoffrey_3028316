@@ -10,7 +10,7 @@ Grid::Grid(RuleSet ruleSet)
 
 Grid::~Grid() {}
 
-
+//first generation of the grid.
 void Grid::firstGeneration()
 {	
 	raster[1][0] = Cell_Filled;
@@ -22,6 +22,7 @@ void Grid::firstGeneration()
 	printGrid();
 }
 
+//printing the grid
 void Grid::printGrid() 
 {
 	system("cls");
@@ -49,6 +50,7 @@ void Grid::printGrid()
 	calculateNeighbors();
 }
 
+//Calculating everything
 void Grid::calculateNeighbors()
 {
 	for (int x = 0; x < HORIZONTAL_SIZE; x++)

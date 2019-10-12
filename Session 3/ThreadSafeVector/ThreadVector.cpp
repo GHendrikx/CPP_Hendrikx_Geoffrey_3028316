@@ -12,6 +12,7 @@ std::mutex mutex;
 
 //square function
 void square(int x) {
+	//waiting for the calculation till the previous one is out of this function
 	std::lock_guard<std::mutex> guard(mutex);
 	total += x * x;
 }

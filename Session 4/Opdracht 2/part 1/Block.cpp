@@ -32,7 +32,7 @@ Block& Block::operator=(const Block& other) {
 }
 
 
-#ifdef MOVESEMANTICS
+//#ifdef MOVESEMANTICS
 
 // move-constructor
 Block::Block(Block&& other) noexcept {
@@ -66,7 +66,7 @@ Block& Block::operator=(Block&& other) noexcept
 	}
 	return *this;
 }
-#endif
+//#endif
 
 std::ostream& operator<<(std::ostream& os, const Block& block) {
 	os << "Block @" << &block << " name:" << block.name << " size:" << block.size;

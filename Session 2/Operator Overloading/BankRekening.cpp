@@ -45,6 +45,7 @@ int BankRekening::getAmount()
 	return money;
 }
 
+//overloading the << signes;
 std::ostream& operator << (std::ostream& stream, BankRekening bankRekening)
 {
 	stream << bankRekening.getName() << ": " << bankRekening.getAmount();

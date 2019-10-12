@@ -13,6 +13,7 @@ std::condition_variable cond;
 std::unique_lock<std::mutex> locker(mutexLock);
 
 void producer() {
+	//locking the code - waiting on thread
 	mutexLock.lock();
 	for (int i = 0; i < 500; ++i) {
 		goods.push(i);
@@ -34,6 +35,7 @@ void consumer() {
 			counter--;
 		}
 	}
+	//unlocking code
 	locker.unlock();
 }
 

@@ -16,14 +16,15 @@ int main()
 	int size = std::size(floatArray) - 1;
 	QueueTemplate<float> queue = QueueTemplate<float>(floatArray,size);
 
-	queue.printVector();
-	queue.put(1.1f);
-	addEnters(1);
+
+	queue.printQueue(); //printing queue
+	queue.put(1.1f); //adding something to the queue
+	addEnters(1); //just for readability
 	std::cout << queue.size();
-	addEnters(1);
-	queue.printVector();
-	addEnters(1);
-	std::cout << queue.get();
-	addEnters(1);
-	queue.printVector(); 
+	addEnters(1); //just for readability
+	queue.printQueue(); //printing queue
+	addEnters(1); //just for readability
+	std::cout << queue.get(); // getting first element
+	addEnters(1); //just for readability
+	queue.printQueue(); //printing queue
 }

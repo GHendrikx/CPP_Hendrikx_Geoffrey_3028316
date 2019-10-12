@@ -7,7 +7,6 @@
 #include <string>
 #include <ostream>
 
-//deze library 
 //#ifdef _MSC_VER
 //#include "bw_msposix.h"
 //#else
@@ -22,11 +21,10 @@ public:
 	Block(const Block& other); // copy-constructor
 	Block& operator=(const Block& other); // assignment-operator
 	Block& operator=(Block&& other) noexcept;
-#ifdef MOVESEMANTICS
+//#ifdef MOVESEMANTICS
 		// nog nodig voor de 'big five'
 	Block(Block&& other) noexcept; // move-constructor
-	//TODO: move-assignment operator
-#endif
+//#endif
 
 private:
 	std::string name;
