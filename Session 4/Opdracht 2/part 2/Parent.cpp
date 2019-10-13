@@ -36,9 +36,8 @@ Parent& Parent::operator=(Parent&& other) noexcept
 		return *this;
 
 	//Transfer values
-	name = nullptr;
 	name = other.name;
-	other.name = nullptr;
+	other.name = "";
 
 	return *this;
 }

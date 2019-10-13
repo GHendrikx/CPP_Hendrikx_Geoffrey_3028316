@@ -17,7 +17,7 @@ int main() {
 	Parent* p3 = new Parent("Parent3");
 	std::cout << "p3:" << *p3 << std::endl;
 
-	*p3 = *p1; // roept de assignment operator aan
+	*p3 = std::move(*p1); // roept de move assignment operator aan
 	std::cout << "p1:" << *p3 << std::endl;
 
 	std::cout << "p1:" << p1Shared.use_count() << " shared" << std::endl;
